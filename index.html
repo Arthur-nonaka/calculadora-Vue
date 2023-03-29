@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 30px;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 40vw;
+            height: 50vh;
+            border: 2px dotted #000;
+        }
+        .result {
+            width: 300px;
+            height: 60px;
+            padding: 10px;
+            background-color: rgb(140, 146, 219);
+            border: 1px solid #3a2b2b;
+        }
+        .buttons {
+            width: 180px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            border: 1px solid #3a2b2b;
+            background-color: rgb(214, 217, 218);
+            justify-content: center;
+        }
+        .buttons button {
+            margin: 0px;
+            padding: 0px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #9c8383;
+            background: white;
+            background-color: rgb(214, 217, 218);
+        }
+        .buttons button:hover {
+            transition: 0.2s ease-in-out;
+            background-color: rgb(187, 195, 197);
+            cursor: pointer;
+        }
+        .actions {
+            width: 180px;
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+            border: 1px solid #3a2b2b;
+            background-color: rgb(124, 147, 155);
+        }
+        .actions button{
+            margin: 0px;
+            padding: 0px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #9c8383;
+            background: white;
+            background-color: rgb(124, 147, 155);
+        }
+        
+        .actions button:hover {
+            transition: 0.2s ease-in-out;
+            background-color: rgb(113, 141, 150);
+            cursor: pointer;
+        }
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <main>
+        <section class="result">
+
+        </section>
+
+        <section class="buttons">
+            <button> 1 </button>
+            <button> 2 </button>
+            <button> 3 </button>
+            <button> 4 </button>
+            <button> 5 </button>
+            <button> 6 </button>
+            <button> 7 </button>
+            <button> 8 </button>
+            <button> 9 </button>
+            <button>0</button>
+        </section>
+        
+        <section class="actions">
+            <button>+</button>
+            <button>-</button>
+            <button>=</button>
+        </section>
+
+    </main>
+</body>
+
+</html>
