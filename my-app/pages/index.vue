@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Display :value="display" :n1="n1" />
+        <Display :value="display" :n1="n1" :n2="n2" :math="math" />
         <Numbers @onChange="onChange" @onClean="onClean" />
         <Actions @onSubtract="onSubtract" @onAdd="onAdd" @onResult="onResult" @onMultiply="onMultiply" @onDivision="onDivision" />
     </main>
@@ -13,6 +13,7 @@ export default {
         return {
             display: "",
             n1: "",
+            n2: "",
             math: ""
         }
     },
@@ -21,49 +22,52 @@ export default {
             if(this.math === "result"){
                 this.display = "";
                 this.n1 = "";
+                this.n2 = "";
             }
-
             String(this.display);
             this.display = parseInt(this.display + String(number));
         },
         onAdd() {
             this.n1 = this.display;
             this.display = "";
-            this.math = "plus";
+            this.math = "+";
         },
         onSubtract() {
             this.n1 = this.display;
             this.display = "";
-            this.math = "minus";
+            this.math = "-";
         },
         onMultiply() {
             this.n1 = this.display;
             this.display = "";
-            this.math = "multiply";
+            this.math = "*";
         },
         onDivision() {
             this.n1 = this.display;
             this.display = "";
-            this.math = "division";
+            this.math = "/";
         },
         onResult() {
-            if(this.math === "plus") {
-                this.display = this.n1 + this.display;
+            this.n2 = this.display;
+            this.display = "";
+            if(this.math === "+") {
+                this.display = this.n1 + this.n2;
             }
-            else if (this.math === "minus") {
-                this.display = this.n1 - this.display;
+            else if (this.math === "-") {
+                this.display = this.n1 - this.n2;
             }
-            else if (this.math === "division") {
-                this.display = this.n1 / this.display;
+            else if (this.math === "/") {
+                this.display = this.n1 / this.n2;
             }
-            else if (this.math === "multiply") {
-                this.display = this.n1 * this.display;
+            else if (this.math === "*") {
+                this.display = this.n1 * this.n2;
             }
             this.math = "result";
         },
         onClean() {
             this.display = "";
             this.n1 = "";
+            this.n2 = "";
         }
     }
 

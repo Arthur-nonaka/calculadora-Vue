@@ -1,25 +1,31 @@
 <template>
     <section class="result">
-        {{ value}}
+        {{ value }}
         <div class="number">
-            {{ n1 }}
+            {{ n1 }} {{ math }} {{ n2 }}
         </div>
     </section>
 </template>
 
 <script>
 
-    export default {
-        props: {
-            value: {
-                required: true,
+export default {
+    props: {
+        value: {
+            required: true,
 
-            },
-            n1: {
-                required: false,
-            }
+        },
+        n1: {
+            required: false,
+        },
+        n2: {
+            required: false,
+        },
+        math: {
+            required: false,
         }
     }
+}
 </script>
 
 <style scoped>
@@ -30,6 +36,7 @@
 
     font-size: 20px;
 }
+
 .result {
     display: flex;
     position: relative;
