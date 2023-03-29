@@ -1,21 +1,24 @@
 <template>
     <section class="buttons">
-        <button> 1 </button>
-        <button> 2 </button>
-        <button> 3 </button>
-        <button> 4 </button>
-        <button> 5 </button>
-        <button> 6 </button>
-        <button> 7 </button>
-        <button> 8 </button>
-        <button> 9 </button>
-        <button>0</button>
+        <button @click="($e) => $emit('onChange', 1)"> 1 </button>
+        <button @click="($e) => $emit('onChange', 2)"> 2 </button>
+        <button @click="($e) => $emit('onChange', 3)"> 3 </button>
+        <button @click="($e) => $emit('onClean')"> C </button>
+        <button @click="($e) => $emit('onChange', 4)"> 4 </button>
+        <button @click="($e) => $emit('onChange', 5)"> 5 </button>
+        <button @click="($e) => $emit('onChange', 6)"> 6 </button>
+        <button></button>
+        <button @click="($e) => $emit('onChange', 7)"> 7 </button>
+        <button @click="($e) => $emit('onChange', 8)"> 8 </button>
+        <button @click="($e) => $emit('onChange', 9)"> 9 </button>
+        <button></button>
+        <button @click="($e) => $emit('onChange', 0)">0</button>
     </section>
 </template>
 
 <style scoped>
 .buttons {
-    width: 180px;
+    width: 240px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

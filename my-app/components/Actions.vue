@@ -1,14 +1,16 @@
 <template>
     <section class="actions">
-        <button>+</button>
-        <button>-</button>
-        <button>=</button>
+        <button @click="($e) => $emit('onAdd')">+</button>
+        <button @click="($e) => $emit('onSubtract')">-</button>
+        <button @click="($e) => $emit('onMultiply')">*</button>
+        <button @click="($e) => $emit('onDivision')">/</button>
+        <button @click="($e) => $emit('onResult')">=</button>
     </section>
 </template>
 
 <style scoped>
 .actions {
-    width: 180px;
+    width: 300px;
     display: flex;
     flex-direction: row;
     margin-top: 10px;
