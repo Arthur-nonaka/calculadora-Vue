@@ -2,7 +2,7 @@
     <section class="result">
         {{ value }}
         <div class="number">
-            {{ n1 }} {{ math }} {{ n2 }}
+            {{ n1 }} {{ showMath }} {{ n2 }}
         </div>
     </section>
 </template>
@@ -21,7 +21,7 @@ export default {
         n2: {
             required: false,
         },
-        math: {
+        showMath: {
             required: false,
         }
     }

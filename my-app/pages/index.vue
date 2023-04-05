@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Display :value="display" :n1="n1" :n2="n2" :math="math" />
+        <Display :value="display" :n1="n1" :n2="n2" :showMath="showMath" />
         <Numbers @onChange="onChange" @onClean="onClean" />
         <Actions @onSubtract="onSubtract" @onAdd="onAdd" @onResult="onResult" @onMultiply="onMultiply" @onDivision="onDivision" />
     </main>
@@ -14,7 +14,8 @@ export default {
             display: "",
             n1: "",
             n2: "",
-            math: ""
+            math: "",
+            showMath: ""
         }
     },
     methods: {
@@ -23,6 +24,8 @@ export default {
                 this.display = "";
                 this.n1 = "";
                 this.n2 = "";
+                this.math = "";
+                this.showMath = "";
             }
             String(this.display);
             this.display = parseInt(this.display + String(number));
@@ -31,21 +34,25 @@ export default {
             this.n1 = this.display;
             this.display = "";
             this.math = "+";
+            this.showMath = this.math;
         },
         onSubtract() {
             this.n1 = this.display;
             this.display = "";
             this.math = "-";
+            this.showMath = this.math;
         },
         onMultiply() {
             this.n1 = this.display;
             this.display = "";
             this.math = "*";
+            this.showMath = this.math;
         },
         onDivision() {
             this.n1 = this.display;
             this.display = "";
             this.math = "/";
+            this.showMath = this.math;
         },
         onResult() {
             this.n2 = this.display;
@@ -68,13 +75,14 @@ export default {
             this.display = "";
             this.n1 = "";
             this.n2 = "";
+            this.showMath = "";
         }
     }
 
 }
 </script>
 
-<style>
+<style scoped>
 * {
     font-size: 30px;
 }
